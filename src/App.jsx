@@ -9,6 +9,7 @@ import CLoader from "./pages/CLoader";
 import { FancyLoader } from "./pages/fancy_loader";
 import LinearLoader from "./pages/LinearLoader";
 import SignUpLoginPage from "./pages/SignUpLoginPage";
+import HelpPage from "./components/HelpPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/main" element={<Mainpage />} />
             <Route path="/main/category/:categoryName" element={<CategoryMeals />} />
+            <Route path="/help" element={<HelpPage />} />
           </Route>
         </Routes>
       </Router>
