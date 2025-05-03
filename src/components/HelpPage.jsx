@@ -1,5 +1,4 @@
 import React from "react";
-import "./HelpPage.css";
 
 function HelpPage() {
   return (

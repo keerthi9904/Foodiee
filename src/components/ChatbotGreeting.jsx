@@ -1,5 +1,4 @@
 import React from "react";
-import "./ChatbotGreeting.css";
 
 function ChatbotGreeting() {
   return (

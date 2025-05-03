@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./ScarcitySidebar.css";
 
 const scarcityImages = [
   "/images/limited1.jpg",

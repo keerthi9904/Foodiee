@@ -537,4 +537,130 @@ h1 {
   .back-btn {
     background-color: #ffcc00;
   }
-  
+/* ScarcitySidebar.css begin */
+.scarcity-sidebar {
+  padding: 20px;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #b30000;
+}
+
+.scarcity-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: opacity 0.5s ease;
+}
+
+.scarcity-text {
+  margin-top: 12px;
+  font-weight: bold;
+  color: #b30000;
+}
+
+.scarcity-footer {
+  background-color: #fff5e6;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #333;
+}
+/* ScarcitySidebar.css end */
+
+/* ChatbotGreeting.css begin */
+.chatbot-greeting {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 5px 0px;
+  z-index: 1000;
+  max-width: 170px;
+  cursor: pointer;
+}
+
+.chatbot-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.chatbot-text {
+  font-size: 14px;
+  color: #333;
+}  
+/* ChatbotGreeting.css end */
+
+/* HelpPage.css begin */
+.help-page {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.help-page h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.help-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.help-section h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #444;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.help-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.help-section ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.help-section p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .help-page {
+    padding: 20px 10px;
+  }
+
+  .help-section {
+    padding: 15px 18px;
+  }
+
+  .help-page h1 {
+    font-size: 26px;
+  }
+}
+/* HelpPage.css end */
