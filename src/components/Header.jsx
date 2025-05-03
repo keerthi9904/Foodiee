@@ -1,20 +1,45 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import { FaSearch, FaShoppingCart, FaMoon, FaSun, FaPlus, FaMinus } from 'react-icons/fa';
+import { FaSearch, FaShoppingCart, FaMoon, FaSun, FaPlus, FaMinus, FaMicrophone } from 'react-icons/fa';
 import logoImg from '../assets/logo.jpg';
 import CartContext from '../store/CartContext.jsx';
 import UserProgressContext from '../store/UserProgressContext.jsx';
-import ThemeContext from '../store/ThemeContext.jsx'; // ✅ Import ThemeContext
+import ThemeContext from '../store/ThemeContext.jsx';
+
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
 export default function Header({ onSearch }) {
   const navigate = useNavigate();
   const cartCtx = useContext(CartContext);
   const userProgressCtx = useContext(UserProgressContext);
-  const { theme, toggleTheme, fontSize, increaseFont, decreaseFont } = useContext(ThemeContext); // ✅ Destructure controls
+  const { theme, toggleTheme, fontSize, increaseFont, decreaseFont } = useContext(ThemeContext);
 
-  const totalCartItems = cartCtx.items.reduce((totalNumberOfItems, item) => {
-    return totalNumberOfItems + item.quantity;
-  }, 0);
+  const { transcript, resetTranscript, listening, browserSupportsSpeechRecognition } = useSpeechRecognition();
+  const [searchInput, setSearchInput] = useState("");
+
+  const totalCartItems = cartCtx.items.reduce((total, item) => total + item.quantity, 0);
+
+  // Sync transcript with search input and notify parent
+  useEffect(() => {
+    if (listening) {
+      setSearchInput(transcript);
+      onSearch(transcript);
+    }
+  }, [transcript]);
+
+  function handleInputChange(e) {
+    setSearchInput(e.target.value);
+    onSearch(e.target.value);
+  }
+
+  function startListening() {
+    resetTranscript();
+    SpeechRecognition.startListening({ continuous: true });
+  }
+
+  function stopListening() {
+    SpeechRecognition.stopListening();
+  }
 
   function handleShowCart() {
     userProgressCtx.showCart();
@@ -29,8 +54,18 @@ export default function Header({ onSearch }) {
 
       <nav className='nav-container'>
         <div className='search-bar'>
-          <input type="text" placeholder='  Search item...' onChange={(e) => onSearch(e.target.value)} />
-          <FaSearch className='search-icon' />
+          <input
+            type="text"
+            placeholder='Search item...'
+            value={searchInput}
+            onChange={handleInputChange}
+          />
+          {/* <FaSearch className='search-icon' /> */}
+          <FaMicrophone
+            className={`microphone-icon ${listening ? 'listening' : ''}`}
+            onClick={listening ? stopListening : startListening}
+            title={listening ? 'Stop Listening' : 'Start Voice Input'}
+          />
         </div>
 
         <div className="controls">
