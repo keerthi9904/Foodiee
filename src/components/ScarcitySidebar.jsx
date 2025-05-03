@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import ThemeContext from "../store/ThemeContext";
 
 const scarcityImages = [
   "/images/limited1.jpg",
@@ -7,6 +8,7 @@ const scarcityImages = [
 ];
 
 function ScarcitySidebar() {
+  const { theme, fontSize } = useContext(ThemeContext); // ✅ Access theme and fontSize
   const [currentIndex, setCurrentIndex] = useState(0);
   const [orderCount, setOrderCount] = useState(0);
 
@@ -24,6 +26,7 @@ function ScarcitySidebar() {
   }, []);
 
   return (
+    <div className={`theme-${theme} font-${fontSize}`}>
     <div className="scarcity-sidebar">
       <h3>🔥Selling Fast!</h3>
       <img
@@ -36,6 +39,7 @@ function ScarcitySidebar() {
       <div className="scarcity-footer">
         <p><strong>{orderCount.toLocaleString()}</strong> people ordered delicious meals from <strong>FOODIEE</strong> today. <br/> Try now!</p>
       </div>
+    </div>
     </div>
   );
 }

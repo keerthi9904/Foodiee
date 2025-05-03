@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import MealItem from "./MealItem.jsx";
 import useHttp from "../hooks/useHttp.js";
 import Error from "./Error.jsx";
 import EmojiParade from "../pages/EmojiParade.jsx";
+import ThemeContext from "../store/ThemeContext.jsx";
 
 const requestConfig = {};
 
@@ -19,6 +20,7 @@ const categories = [
 ];
 
 export default function Meals({ searchQuery }) {
+  const { theme, fontSize } = useContext(ThemeContext); // ✅ Access theme and fontSize
   const { data: loadedMeals, isLoading, error } = useHttp(
     "http://localhost:3000/meals",
     requestConfig,
@@ -49,7 +51,7 @@ export default function Meals({ searchQuery }) {
   : loadedMeals;
 
   return (
-    <div>
+    <div  className={`theme-${theme} font-${fontSize}`}>
       {showLoader && <EmojiParade />}
       <div className="category-container">
         {categories.map((category) => (

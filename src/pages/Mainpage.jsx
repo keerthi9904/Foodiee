@@ -12,7 +12,7 @@ function Mainpage() {
         <div style={{ flex: 1, borderRight: "1px solid #ccc", backgroundColor: "#f9f9f9" }}>
           <ScarcitySidebar />
         </div>
-        <div style={{ flex: 4, overflowY: "auto" }}>
+        <div style={{ height: "100vh", flex: 4, overflowY: "auto" }}>
             <Meals searchQuery={searchQuery}/>
         </div>
         <ChatbotGreeting />
