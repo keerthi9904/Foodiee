@@ -600,12 +600,42 @@ h1 {
 }  
 /* ChatbotGreeting.css end */
 
+/* Added help pags css - toggling css */
+/* FAQ dropdown styles */
+.faq-item {
+  border-bottom: 1px solid #eee;
+  padding: 12px 0;
+  cursor: pointer;
+  margin: 30px;
+}
+
+.faq-question {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  font-size: 15px;
+  color: #555;
+  margin-top: 8px;
+  padding-left: 5px;
+}
+
+.faq-toggle {
+  font-size: 20px;
+  color: #777;
+}
+
 /* HelpPage.css begin */
-.help-page {
+ .help-page {
   padding: 40px 20px;
   max-width: 800px;
   margin: auto;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
   color: #333;
   background-color: #f9f9f9;
   min-height: 100vh;
@@ -662,5 +692,5 @@ h1 {
   .help-page h1 {
     font-size: 26px;
   }
-}
+} 
 /* HelpPage.css end */
