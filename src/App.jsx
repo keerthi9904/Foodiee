@@ -10,6 +10,7 @@ import { FancyLoader } from "./pages/fancy_loader";
 import LinearLoader from "./pages/LinearLoader";
 import SignUpLoginPage from "./pages/SignUpLoginPage";
 import HelpPage from "./components/HelpPage";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/LoginPage" element={<LoginPage/>}/>
           <Route path="/SignUpPage" element={<SignUpLoginPage/>}/>
           <Route path="/loading_main" element={<FancyLoader/>}/>
+          <Route path="/profile" element={<ProfilePage />} />
           {/* Layout wraps Mainpage and CategoryMeals */}
           <Route element={<Layout />}>
             <Route path="/main" element={<Mainpage />} />

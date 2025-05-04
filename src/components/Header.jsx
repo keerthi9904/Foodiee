@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import { FaSearch, FaShoppingCart, FaMoon, FaSun, FaPlus, FaMinus, FaMicrophone } from 'react-icons/fa';
+import { FaSearch, FaShoppingCart, FaMoon, FaSun, FaPlus, FaMinus, FaMicrophone, FaUserCircle, FaMapMarkerAlt } from 'react-icons/fa';
 import logoImg from '../assets/logo.jpg';
 import CartContext from '../store/CartContext.jsx';
 import UserProgressContext from '../store/UserProgressContext.jsx';
@@ -19,7 +19,6 @@ export default function Header({ onSearch }) {
 
   const totalCartItems = cartCtx.items.reduce((total, item) => total + item.quantity, 0);
 
-  // Sync transcript with search input and notify parent
   useEffect(() => {
     if (listening) {
       setSearchInput(transcript);
@@ -47,9 +46,15 @@ export default function Header({ onSearch }) {
 
   return (
     <header id="main-header">
-      <div id="title">
-        <img src={logoImg} onClick={() => navigate("/")} className='mainpage-logo' alt="A restaurant" />
-        <h1>Foodiee</h1>
+      <div id="title" onClick={() => navigate("/")}>
+        <img src={logoImg} className='mainpage-logo' alt="A restaurant" />
+        <div className='brand-info'>
+          <h1>Foodiee</h1>
+          <div className='location-info'>
+            <FaMapMarkerAlt className='location-icon' />
+            <span className='location-text'>Guntur</span>
+          </div>
+        </div>
       </div>
 
       <nav className='nav-container'>
@@ -60,7 +65,6 @@ export default function Header({ onSearch }) {
             value={searchInput}
             onChange={handleInputChange}
           />
-          {/* <FaSearch className='search-icon' /> */}
           <FaMicrophone
             className={`microphone-icon ${listening ? 'listening' : ''}`}
             onClick={listening ? stopListening : startListening}
@@ -78,6 +82,11 @@ export default function Header({ onSearch }) {
           <FaShoppingCart className='cart-icon' />
           <span className="cart-text">Cart ({totalCartItems})</span>
         </div>
+
+        <div className="profile-icon" onClick={() => navigate('/profile')}>
+          <FaUserCircle />
+        </div>
+
       </nav>
     </header>
   );

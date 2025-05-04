@@ -1,0 +1,158 @@
+.profile-page {
+    display: flex;
+    font-family: Arial, sans-serif;
+    background-color: #ccc;
+  }
+  
+  .sidebar {
+    border-radius: 16px;
+    margin: 3%;
+    width: 280px;
+    background-color: #fff;
+    padding: 20px;
+    border-right: 1px solid #eee;
+    height: 100vh;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .profile-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+  
+  .profile-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #4b32c3;
+  }
+  
+  .profile-header p {
+    margin: 2px 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .profile-header a {
+    font-size: 0.85rem;
+    color: #007bff;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-menu li {
+    padding: 12px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .sidebar-menu li svg {
+    margin-right: 8px;
+  }
+  
+  .sidebar-menu li.active {
+    background-color: #4b32c3;
+    color: white;
+  }
+  
+  .new-tag {
+    background-color: red;
+    color: white;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    margin-left: 5px;
+    border-radius: 10px;
+  }
+  
+  .orders-content {
+    border-radius: 16px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-right: 3%;
+    flex-grow: 1;
+    padding: 30px;
+    background: #f9f9f9;
+  }
+  
+  .orders-content h2 {
+    color: #4b32c3;
+    margin-top: 0;
+  }
+
+  .orders-content p {
+    color: #4b32c3;
+  }
+  
+  .order-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    color: #4b32c3;
+  }
+  
+  .order-status {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .order-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .restaurant-name {
+    color: #4b32c3;
+    font-weight: bold;
+  }
+  
+  .price-info {
+    text-align: right;
+  }
+  
+  .ratings-section {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #444;
+  }
+  
+  .order-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .reorder-btn {
+    background-color: #4b32c3;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }  
+
+  .avatar {
+    width: 70px;          /* or any size you want */
+    height: 70px;
+    border-radius: 50%;   /* makes it circular */
+    object-fit: cover;    /* ensures the image fills the circle without distortion */
+    border: 2px solid #ccc; /* optional: adds a border */
+  }
+  
