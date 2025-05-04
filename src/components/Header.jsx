@@ -46,14 +46,26 @@ export default function Header({ onSearch }) {
 
   return (
     <header id="main-header">
-      <div id="title" onClick={() => navigate("/")}>
-        <img src={logoImg} className='mainpage-logo' alt="A restaurant" />
+      <div id="title">
+        <img src={logoImg} className='mainpage-logo' alt="A restaurant" onClick={() => navigate("/")}/>
         <div className='brand-info'>
           <h1>Foodiee</h1>
           <div className='location-info'>
             <FaMapMarkerAlt className='location-icon' />
-            <span className='location-text'>Guntur</span>
+            <select
+              className='location-dropdown'
+              defaultValue="Guntur"
+              onChange={(e) => console.log("Selected location:", e.target.value)}
+            >
+              <option value="Guntur">Guntur</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Guntur">Banglore</option>
+              <option value="Hyderabad">Tirupati</option>
+              <option value="Chennai">Mumbai</option>
+            </select>
           </div>
+
         </div>
       </div>
 
