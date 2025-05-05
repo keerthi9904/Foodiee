@@ -155,4 +155,24 @@
     object-fit: cover;    /* ensures the image fills the circle without distortion */
     border: 2px solid #ccc; /* optional: adds a border */
   }
+  .back-button {
+    background: none; /* Transparent background */
+    border: 2px solid black; /* Black outline */
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black; /* Arrow color */
+    margin-top: 10px;
+    margin-left: 20px !important; /* Adjust for positioning */
+    width: 40px; /* Circle width */
+    height: 40px; /* Circle height */
+    border-radius: 50%; /* Makes it circular */
+    transition: background 0.3s ease, color 0.3s ease;
+  }
   
+  .back-button:hover {
+    background: rgb(0, 0, 0); /* Background fills on hover */
+    color: white; /* Arrow turns white on hover */
+  }

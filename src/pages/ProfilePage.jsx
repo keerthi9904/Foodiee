@@ -1,9 +1,17 @@
 import './ProfilePage.css';
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import { FaMapMarkerAlt, FaWallet, FaInfoCircle, FaClipboardList, FaChevronRight } from 'react-icons/fa';
-
+import { useNavigate } from 'react-router-dom';
 export default function ProfilePage() {
+  const navigate = useNavigate();
+  function handleBackClick() {
+    navigate("/main"); // Navigate back to the main page
+  }
   return (
     <div className="profile-page">
+      <button className="back-button" onClick={handleBackClick}>
+        <AiOutlineArrowLeft size={24} />
+      </button>
       <aside className="sidebar">
         <div className="profile-header">
           {/* <div className="profile-circle" /> */}
