@@ -27,7 +27,7 @@ export default function ProfilePage() {
           <li><FaMapMarkerAlt /> Manage Address <FaChevronRight className="chevron" /></li>
           <li><FaWallet /> Wallet Transactions <span className="new-tag">NEW</span> <FaChevronRight className="chevron" /></li>
           <li><FaWallet /> Sure Points <FaChevronRight className="chevron" /></li>
-          <li><FaInfoCircle /> About Eatsure <FaChevronRight className="chevron" /></li>
+          <li><FaInfoCircle /> About Foodiee <FaChevronRight className="chevron" /></li>
           <li><FaInfoCircle /> Terms And Conditions <FaChevronRight className="chevron" /></li>
         </ul>
       </aside>
