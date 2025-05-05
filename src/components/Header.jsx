@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import { FaSearch, FaShoppingCart, FaMoon, FaSun, FaPlus, FaMinus, FaMicrophone, FaUserCircle, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaMagnifyingGlassPlus, FaMagnifyingGlassMinus } from 'react-icons/fa6';
+import { FaShoppingCart, FaMoon, FaSun, FaPlus, FaMinus, FaMicrophone, FaUserCircle, FaMapMarkerAlt } from 'react-icons/fa';
 import logoImg from '../assets/logo.jpg';
 import CartContext from '../store/CartContext.jsx';
 import UserProgressContext from '../store/UserProgressContext.jsx';
@@ -58,11 +59,12 @@ export default function Header({ onSearch }) {
               onChange={(e) => console.log("Selected location:", e.target.value)}
             >
               <option value="Guntur">Guntur</option>
+              <option value="Vijayawada">Vijayawada</option>
               <option value="Hyderabad">Hyderabad</option>
               <option value="Chennai">Chennai</option>
-              <option value="Guntur">Banglore</option>
-              <option value="Hyderabad">Tirupati</option>
-              <option value="Chennai">Mumbai</option>
+              <option value="Banglore">Banglore</option>
+              <option value="Tirupati">Tirupati</option>
+              <option value="Mumbai">Mumbai</option>
             </select>
           </div>
 
@@ -85,8 +87,12 @@ export default function Header({ onSearch }) {
         </div>
 
         <div className="controls">
-          <button onClick={decreaseFont}><FaMinus /></button>
-          <button onClick={increaseFont}><FaPlus /></button>
+          {/* <button onClick={decreaseFont}>A<sup>-</sup></button>
+          <button onClick={increaseFont}>A<sup>+</sup></button> */}
+          {/* <button onClick={decreaseFont}><FaMinus /></button>
+          <button onClick={increaseFont}><FaPlus /></button> */}
+          <button onClick={decreaseFont} aria-label="Decrease text size"><FaMagnifyingGlassMinus /></button>
+          <button onClick={increaseFont} aria-label="Increase text size"><FaMagnifyingGlassPlus /></button>
           <button onClick={toggleTheme}>{theme === 'dark' ? <FaSun /> : <FaMoon />}</button>
         </div>
 
