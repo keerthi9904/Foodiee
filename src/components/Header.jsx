@@ -70,7 +70,6 @@ export default function Header({ onSearch }) {
 
         </div>
       </div>
-
       <nav className='nav-container'>
         <div className='search-bar'>
           <input
@@ -87,10 +86,6 @@ export default function Header({ onSearch }) {
         </div>
 
         <div className="controls">
-          {/* <button onClick={decreaseFont}>A<sup>-</sup></button>
-          <button onClick={increaseFont}>A<sup>+</sup></button> */}
-          {/* <button onClick={decreaseFont}><FaMinus /></button>
-          <button onClick={increaseFont}><FaPlus /></button> */}
           <button onClick={decreaseFont} aria-label="Decrease text size"><FaMagnifyingGlassMinus /></button>
           <button onClick={increaseFont} aria-label="Increase text size"><FaMagnifyingGlassPlus /></button>
           <button onClick={toggleTheme}>{theme === 'dark' ? <FaSun /> : <FaMoon />}</button>
